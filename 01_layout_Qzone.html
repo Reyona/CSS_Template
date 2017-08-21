@@ -1,6 +1,8 @@
 <html>
 
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+
         <link href="clear.css" rel="stylesheet" type="text/css" />
     </head>
 
@@ -19,7 +21,7 @@
         .main_panel .navigator {
             position: fixed;
             top: 100px;
-            left: 39px;
+            left: 39px;/*根据main_panel的left、navigator的width计算出来，再加上一条border的宽度*/
             width: 60px;
 
             border: 1px solid blue;
@@ -49,7 +51,7 @@
         .main_panel .right-panel {
             position: absolute;
             top: 0;
-            left: 16em;
+            left: 16em;/*根据left-panel的width和padding计算出*/
             bottom: 0;
             right: 0;
 
