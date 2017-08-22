@@ -1,64 +1,56 @@
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
 
-        <link href="clear.css" rel="stylesheet" type="text/css" />
+        <link href="clear.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <style>
-        .main_panel {
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            bottom: 100px;
-            right: 100px;
-            min-height: 27em;
-            min-width: 48em;
+        .toolbar {
+            height: 45px;
 
             border: 1px solid black;
         }
-        .main_panel .navigator {
-            position: fixed;
-            top: 100px;
-            left: 39px;/*根据main_panel的left、navigator的width计算出来，再加上一条border的宽度*/
-            width: 60px;
+        .title {
+            width: 800px;
+            height: 80px;
+            margin: 0 auto 0 auto;
+
+            border: 1px dashed blue;
+        }
+        .title > h1 , .title > p {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .main_panel {
+            position: relative;
+            width: 800px;
+            min-height: 500px;
+            margin: 10px auto 10px auto;
 
             border: 1px solid blue;
         }
-        .navigator ul > li {
-            list-style-type:none;
-        }
-        .main_panel .left-panel {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 15em;
+        .main_panel .left_panel {
+            float: left;/*左浮动，right_panel需要设置等宽的margin-left*/
+            width: 200px;
+            height: auto;/*要确保height适应内容后，仍不超过main_panel的min-height*/
+            margin: 10px;
 
-            border-right: 1px solid blue;
-            padding: 0.5em;
+            border: 1px solid red;
+        }
+        .main_panel .right_panel {
+            margin: 10px 10px 10px 220px;/*根据left_panel的width和margin计算出*/
+
+            border: 1px solid red;
         }
         .profile_head {
-            margin: 0 auto;
-
+            margin: 15px auto;
             width: 150px;/*为了居中要有一个包含块，最好与图片大小一致*/
         }
         .profile_head > img {
             width: 150px;
         }
 
-        .main_panel .right-panel {
-            position: absolute;
-            top: 0;
-            left: 16em;/*根据left-panel的width和padding计算出*/
-            bottom: 0;
-            right: 0;
-
-            overflow:auto;
-            padding: 0.5em;
-            border: 1px solid red;
-        }
         .blog-abstract {
             margin: 10px;
         }
@@ -70,7 +62,7 @@
         }
         .blog-abstract .blog-content {
             padding: 5px;
-            color: red;
+            color: black;
         }
         .blog-separator {
             margin: 5px 10px;
@@ -80,24 +72,25 @@
         .blog-abstract:last-child .blog-separator {
             display: none;
         }
+
+        .footer {
+            height: 100px;
+
+            border: 1px dashed black;
+        }
     </style>
 
     <body>
-        <!--main panel is absolute to browser window-->
+        <div class="toolbar">
+            Top menu and Tool Bar
+        </div>
+        <div class="title">
+            <h1>Cherry's BLog</h1>
+            <p>cherry.blog.com</p>
+        </div>
         <div class="main_panel">
-            <!--navigator is fixed to browser window-->
-            <div class="navigator">
-                <ul>
-                    <li>Home</li>
-                    <li>Blog</li>
-                    <li>Photo</li>
-                    <li>About me</li>
-                </ul>
-            </div>
-            <!--left panel is absolute to main panel-->
-            <div class="left-panel">
-                <h3>My profile</h3>
-                <!--profile head is center align-->
+            <div class="left_panel">
+                <p><b>My Profile</b></p>
                 <div class="profile_head">
                     <img src="pic.jpg">
                 </div>
@@ -107,14 +100,13 @@
                     Study: Front-end Develop<br/>
                 </div>
             </div>
-            <!--right panel is absolute to main panel-->
-            <div class="right-panel">
+            <div class="right_panel">
                 <div class="blog-abstract">
                     <h2>Blog 1</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
                     <!--separator won't show for the last blog-->
@@ -123,65 +115,74 @@
                 <!--Below just Ctrl+c and Ctrl+v-->
                 <div class="blog-abstract">
                     <h2>Blog 2</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
                 <div class="blog-abstract">
                     <h2>Blog 3</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
                 <div class="blog-abstract">
                     <h2>Blog 4</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
                 <div class="blog-abstract">
                     <h2>Blog 5</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
                 <div class="blog-abstract">
                     <h2>Blog 6</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
                 <div class="blog-abstract">
                     <h2>Blog 7</h2>
-                    <p class="blog-createDt">2017-08-18 14:10</p>
+                    <p class="blog-createDt">2017-08-22 14:10</p>
                     <div class="blog-content">
                         <text>
-                            Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone! Welcome my Qzone!
+                            Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog! Welcome my Blog!
                         </text>
                     </div>
+                    <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            Copyright © 2016-2020
         </div>
     </body>
 </html>

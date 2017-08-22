@@ -9,3 +9,8 @@ Add layout Qzone.
 2017-08-21<br/>
 Add layout 2 columns Blog.
 </p>
+<p>
+2017-08-22<br/>
+Update layout 2 columns Blog recommended version;<br/>
+Add layout 2 columns Blog solution2.
+</p>
