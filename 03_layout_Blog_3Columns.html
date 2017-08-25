@@ -4,7 +4,6 @@
 
         <link href="clear.css" rel="stylesheet" type="text/css"/>
     </head>
-
     <style>
         .toolbar {
             height: 45px;
@@ -30,18 +29,28 @@
             border: 1px solid blue;
         }
         .main_panel .left_panel {
-            float: left;/*左浮动，right_panel需要设置等宽的margin-left*/
-            width: 200px;
-            height: auto;/*要确保height适应内容后，仍不超过main_panel的min-height*/
+            float: left;
+            width: 150px;
+            height: auto;
             margin: 10px;
 
             border: 1px solid red;
         }
         .main_panel .right_panel {
-            margin: 10px 10px 10px 220px;/*根据left_panel的width和margin计算出*/
+            float: right;
+            width: 150px;
+            height: auto;
+            margin: 10px;
 
             border: 1px solid red;
         }
+        .main_panel .middle_panel {
+            margin: 10px 170px;
+            min-height: 500px;
+
+            border: 1px solid red;
+        }
+
         .profile_head {
             margin: 15px auto;
             width: 150px;/*为了居中要有一个包含块，最好与图片大小一致*/
@@ -49,7 +58,6 @@
         .profile_head > img {
             width: 150px;
         }
-
         .blog-abstract {
             margin: 10px;
         }
@@ -100,6 +108,17 @@
                 </div>
             </div>
             <div class="right_panel">
+                <p><b>My Profile</b></p>
+                <div class="profile_head">
+                    <img src="pic.jpg">
+                </div>
+                <div>
+                    Name: Cherry<br/>
+                    Location: ZHA, PRC<br/>
+                    Study: Front-end Develop<br/>
+                </div>
+            </div>
+            <div class="middle_panel">
                 <div class="blog-abstract">
                     <h2>Blog 1</h2>
                     <p class="blog-createDt">2017-08-22 14:10</p>
@@ -180,6 +199,7 @@
                 </div>
             </div>
         </div>
+
         <div class="footer">
             Copyright © 2016-2020
         </div>

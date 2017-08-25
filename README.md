@@ -14,3 +14,7 @@ Add layout 2 columns Blog.
 Update layout 2 columns Blog recommended version;<br/>
 Add layout 2 columns Blog solution2.
 </p>
+<p>
+2017-08-25<br/>
+Add layout 3 columns Blog.
+</p>
