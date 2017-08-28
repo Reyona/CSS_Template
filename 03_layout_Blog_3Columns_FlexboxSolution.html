@@ -26,26 +26,32 @@
             min-height: 500px;
             margin: 10px auto 10px auto;
 
+            display: flex;
+
             border: 1px solid blue;
         }
         .main_panel .left_panel {
-            float: left;
-            width: 150px;
+            flex: 1;
+/*            float: left;
+            width: 150px;*/
             height: auto;
             margin: 10px;
 
             border: 1px solid red;
         }
         .main_panel .right_panel {
-            float: right;
-            width: 150px;
+            flex: 1;
+/*            float: right;
+            width: 150px;*/
             height: auto;
             margin: 10px;
 
             border: 1px solid red;
         }
         .main_panel .middle_panel {
-            margin: 10px 170px;
+            flex: 3;
+            margin: 10px;
+/*            margin: 10px 170px;*/
             min-height: 500px;
 
             border: 1px solid red;
@@ -107,19 +113,7 @@
                     Study: Front-end Develop<br/>
                 </div>
             </div>
-            <!--注意这里middle_panel和right_panel的顺序跟用flexbox布局的不一样！-->
-            <!--在float布局中，right_panel要放在middle_panel的前面，不然显示出来会比middle_panel矮一截-->
-            <div class="right_panel">
-                <p><b>My Profile</b></p>
-                <div class="profile_head">
-                    <img src="pic.jpg">
-                </div>
-                <div>
-                    Name: Cherry<br/>
-                    Location: ZHA, PRC<br/>
-                    Study: Front-end Develop<br/>
-                </div>
-            </div>
+            <!--注意这里middle_panel和right_panel的顺序跟原来用float布局的不一样！-->
             <div class="middle_panel">
                 <div class="blog-abstract">
                     <h2>Blog 1</h2>
@@ -198,6 +192,17 @@
                     </div>
                     <!--separator won't show for the last blog-->
                     <div class="blog-separator"></div>
+                </div>
+            </div>
+            <div class="right_panel">
+                <p><b>My Profile</b></p>
+                <div class="profile_head">
+                    <img src="pic.jpg">
+                </div>
+                <div>
+                    Name: Cherry<br/>
+                    Location: ZHA, PRC<br/>
+                    Study: Front-end Develop<br/>
                 </div>
             </div>
         </div>

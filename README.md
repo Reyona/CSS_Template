@@ -18,3 +18,9 @@ Add layout 2 columns Blog solution2.
 2017-08-25<br/>
 Add layout 3 columns Blog.
 </p>
+<p>
+2017-08-28<br/>
+Add layout Qzone implemented by flexbox.<br/>
+Add layout 2 columns Blog implemented by flexbox.<br/>
+Add layout 3 columns Blog implemented by flexbox.
+</p>
