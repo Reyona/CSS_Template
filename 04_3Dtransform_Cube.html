@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+
+        <link href="clear.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        .stage {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            background: url(bg-grid.jpg) no-repeat center center;
+            background-size: 100% 100%;
+
+            perspective: 300px;
+        }
+        .container {
+            top: 25%;
+            left: 25%;
+            position: absolute;
+
+            transform-style: preserve-3d;
+
+            /*注意这里有个坑：
+            原本container的width和height没有指定，默认为0，位置在左上角，transition动画效果加在container上以后，transform-origin就在左上角了，看起来就像是在绕着left面的中轴在转。
+            解决方案：
+            把container的width和height加大到跟其所在横截面相同，transform-origin自然就在整个正方体的中心了。
+            */
+            width: 200px;
+            height: 200px;
+            transition:5s;
+        }
+        .container:hover {
+            transform: rotateY(360deg);
+        }
+        .side {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+
+            border: 2px solid rgba(142,198,63,1);
+            background: rgba(142,198,63,0.3);
+            font-size: 100px;
+            text-align: center;
+            line-height: 200px;
+
+        }
+        .front {
+            transform: translateZ(100px);
+        }
+        .right {
+            transform: rotateY(90deg) translateZ(100px);/*与下面那句等价*/
+            /*transform: translateX(100px) rotateY(90deg);*/
+        }
+        .back {
+            transform: rotateY(180deg) translateZ(100px);/*与下面那句等价*/
+            /*transform: translateZ(-100px) rotateY(180deg);*/
+        }
+        .left {
+            transform: rotateY(270deg) translateZ(100px);/*与下面那句等价*/
+            /*transform: translateX(-100px) rotateY(270deg);*/
+        }
+        .top {
+            transform: rotateX(90deg) translateZ(100px);/*与下面那句等价*/
+            /*transform: translateY(-100px) rotateX(90deg);*/
+        }
+        .bottom {
+            transform: rotateX(270deg) translateZ(100px);/*与下面那句等价*/
+            /*transform: translateY(100px) rotateX(270deg);*/
+        }
+    </style>
+
+    <body>
+        <div class="stage">
+            <div class="container">
+                <div class="side front">1</div>
+                <div class="side right">2</div>
+                <div class="side back">3</div>
+                <div class="side left">4</div>
+                <div class="side top">5</div>
+                <div class="side bottom">6</div>
+            </div>
+        </div>
+    </body>
+</html>
