@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+
+        <link href="clear.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        .stage {
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            position: relative;
+            background: url(bg-grid.jpg) no-repeat center center;
+            background-size: 100% 100%;
+
+            perspective: 500px;
+        }
+        .container {
+            top: 25%;
+            left: 25%;
+            position: absolute;
+
+            transform-style: preserve-3d;
+
+            width: 278px;/*手动调整 未计算*/
+            height: 278px;
+            transition:5s;
+        }
+        .container:hover {
+            transform: rotateY(360deg);
+        }
+
+        .side {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 142px solid transparent;/*手动调整 未计算*/
+            border-right: 142px solid transparent;/*手动调整 未计算*/
+            border-bottom: 200px solid rgba(142,198,63,0.3);/*手动调整 未计算*/
+
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .front {
+            transform: translateZ(71px) rotateX(45deg);/*手动调整 未计算*/
+        }
+        .right {
+            transform: rotateY(90deg) translateZ(71px) rotateX(45deg);/*手动调整 未计算*/
+        }
+        .back {
+            transform: rotateY(180deg) translateZ(71px) rotateX(45deg);/*手动调整 未计算*/
+        }
+        .left {
+            transform: rotateY(270deg) translateZ(71px) rotateX(45deg);/*手动调整 未计算*/
+        }
+        .bottom {
+            position: absolute;
+            width: 285px;/*手动调整 未计算*/
+            height: 285px;/*手动调整 未计算*/
+            background: rgba(142,198,63,0.3);
+
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+
+            transform: rotateX(270deg) translateZ(28px);/*手动调整 未计算*/
+        }
+    </style>
+    <body>
+    <div class="stage">
+        <div class="container">
+            <div class="side front">1</div>
+            <div class="side right">2</div>
+            <div class="side back">3</div>
+            <div class="side left">4</div>
+            <div class="bottom">6</div>
+        </div>
+    </div>
+    </body>
+</html>
