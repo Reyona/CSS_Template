@@ -32,3 +32,7 @@ Add 3D transform Cube.
 2017-09-20<br/>
 Add 3D transform Pyramid - But the transform parameters are hard to calculate, so adjust them just in vision.
 </p>
+<p>
+2017-09-23<br/>
+Add 3D transform and 3D animation Cuboid.
+</p>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+
+        <link href="clear.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        @-webkit-keyframes rollingXYZ { /*依次向三个方向连续翻转 rotate*(0)不能省略*/
+            0% {
+            }
+            33% {
+                transform: rotateX(0) rotateY(360deg) rotateZ(0);
+            }
+            66% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        @-webkit-keyframes zoomingInAndOut {
+            0% {
+                perspective: 300px;
+            }
+            33% {
+                perspective: 20px;
+            }
+            66% {
+                perspective: 800px;
+            }
+            100% {
+                perspective: 300px;
+            }
+        }
+
+        .stage {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            background: url(bg-grid.jpg) no-repeat center center;
+            background-size: 100% 100%;
+
+            perspective: 300px;
+        }
+        .container {
+            top: 155px;
+            left: 120px;
+            position: absolute;
+
+            transform-style: preserve-3d;
+
+            width: 160px;
+            height: 90px;
+        }
+        .container:hover {
+            animation: rollingXYZ 4s linear 1 normal 0s none;
+        }
+
+        .side {
+            position: absolute;
+            left: 0; right: 0; margin-left: auto; margin-right: auto;/*absolute的水平居中：左右margin显式auto && left和right指定且相等*/
+            top: 0; bottom: 0; margin-top: auto; margin-bottom: auto;/*absolute的垂直居中：上下margin显式auto && top和bottom指定且相等*/
+
+            border: 1px solid rgba(142,198,63,1);
+            background: rgba(142,198,63,0.3);
+            font-size: 30px;
+            text-align: center;
+        }
+        .front {
+            width: 158px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 88px;
+            transform: translateZ(25px);
+
+            line-height: 90px;/*文字垂直居中*/
+        }
+        .right {
+            width: 48px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 88px;
+            transform: rotateY(90deg) translateZ(80px);
+
+            line-height: 90px;/*文字垂直居中*/
+        }
+        .back {
+            width: 158px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 88px;
+            transform: rotateY(180deg) translateZ(25px);
+
+            line-height: 90px;/*文字垂直居中*/
+        }
+        .left {
+            width: 48px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 88px;
+            transform: rotateY(270deg) translateZ(80px);
+
+            line-height: 90px;/*文字垂直居中*/
+        }
+        .top {
+            width: 158px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 48px;
+            transform: rotateX(90deg) translateZ(45px);
+
+            line-height: 50px;/*文字垂直居中*/
+        }
+        .bottom {
+            width: 158px;/*因为有了border 1px，所以宽和高都要-2px*/
+            height: 48px;
+            transform: rotateX(-90deg) translateZ(45px);
+
+            line-height: 50px;/*文字垂直居中*/
+        }
+    </style>
+    <body>
+        <div class="stage">
+            <div class="container">
+                <div class="side front">1</div>
+                <div class="side right">2</div>
+                <div class="side back">3</div>
+                <div class="side left">4</div>
+                <div class="side top">5</div>
+                <div class="side bottom">6</div>
+            </div>
+        </div>
+    </body>
+</html>
