@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+
+        <link href="clear.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        .stage {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            background: url(bg-grid.jpg) no-repeat center center;
+            background-size: 100% 100%;
+
+            perspective: 300px;
+        }
+        .container {
+            top: 37.5%;
+            left: 37.5%;
+            position: absolute;
+
+            transform-style: preserve-3d;
+
+            /*注意这里有个坑：
+            原本container的width和height没有指定，默认为0，位置在左上角，transition动画效果加在container上以后，transform-origin就在左上角了，看起来就像是在绕着left面的中轴在转。
+            解决方案：
+            把container的width和height加大到跟其所在横截面相同，transform-origin自然就在整个正方体的中心了。
+            */
+            width: 100px;
+            height: 100px;
+            transition:5s;
+        }
+        .container:hover {
+            transform: rotateY(360deg);
+        }
+        .side {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+
+            background: rgba(142,198,63,0.3);
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+
+        }
+        .one {
+            transform:                translateZ(130px);
+        }
+        .two {
+            transform: rotateY(45deg) translateZ(130px);
+        }
+        .three {
+            transform: rotateY(90deg) translateZ(130px);
+        }
+        .four {
+            transform: rotateY(135deg) translateZ(130px);
+        }
+        .five {
+            transform: rotateY(180deg) translateZ(130px);
+        }
+        .six {
+            transform: rotateY(225deg) translateZ(130px);
+        }
+        .seven {
+            transform: rotateY(270deg) translateZ(130px);
+        }
+        .eight {
+            transform: rotateY(315deg) translateZ(130px);
+        }
+        .one_shadow {
+            transform: translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .two_shadow {
+            transform: rotateY(45deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .three_shadow {
+            transform: rotateY(90deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .four_shadow {
+            transform: rotateY(135deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .five_shadow {
+            transform: rotateY(180deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .six_shadow {
+            transform: rotateY(225deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .seven_shadow {
+            transform: rotateY(270deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+        .eight_shadow {
+            transform: rotateY(315deg) translateZ(180px) rotateY(180deg) rotateX(90deg) translateZ(-50px);
+            background: linear-gradient(transparent, transparent, rgba(142,198,63,0.3));
+        }
+    </style>
+    <body>
+        <div class="stage">
+            <div class="container">
+                <div class="side one">1</div>
+                <div class="side one_shadow"></div>
+                <div class="side two">2</div>
+                <div class="side two_shadow"></div>
+                <div class="side three">3</div>
+                <div class="side three_shadow"></div>
+                <div class="side four">4</div>
+                <div class="side four_shadow"></div>
+                <div class="side five">5</div>
+                <div class="side five_shadow"></div>
+                <div class="side six">6</div>
+                <div class="side six_shadow"></div>
+                <div class="side seven">7</div>
+                <div class="side seven_shadow"></div>
+                <div class="side eight">8</div>
+                <div class="side eight_shadow"></div>
+            </div>
+        </div>
+    </body>
+</html>
