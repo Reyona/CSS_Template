@@ -2,28 +2,126 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--防止中文乱码-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><!--移动端必须加-->
 
         <link href="../clear.css" rel="stylesheet" type="text/css"/>
     </head>
     <style>
         .header {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            line-height: 30px;/*与height相等 垂直居中*/
+
+            border: 1px solid black;
+            background-color: white;
+        }
+        .header-1 {
+            flex: 1;
+        }
+        .header-4 {
+            flex: 4;
+        }
+        .top-logo {
+            text-align: center;
         }
 
         .main {
+            margin-top: 30px;/*与.header-height相等 不被遮挡*/
+            margin-bottom: 30px;/*与.footer-height相等 不被遮挡*/
+        }
+        .profile_head {
+            margin: 0 auto;
+
+            width: 300px;/*为了居中要有一个包含块，最好与图片大小一致*/
+        }
+        .profile_head > img {
+            width: 300px;
         }
 
         .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            line-height: 30px;
+
+            border: 1px solid black;
+            background-color: white;
+        }
+        .footer-2 {
+            flex: 2;
+            text-align: center;
+        }
+        .footer-5 {
+            flex: 5;
+            text-align: center;
+        }
+
+        .add-cart {
+            background-color: red;
+            color: white;
         }
     </style>
     <body>
         <div class="header">
-
+            <div class="header-1">
+                首页
+            </div>
+            <div class="top-logo header-4">
+                网易商城
+            </div>
+            <div class="header-1">
+                搜索
+            </div>
+            <div class="header-1">
+                购物车
+            </div>
         </div>
         <div class="main">
-
+            <div class="profile_head">
+                <img src="../pic.jpg">
+            </div>
+            <div>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+                <p>商品介绍</p>
+            </div>
         </div>
         <div class="footer">
-
+            <div class="footer-2">
+                联系客服
+            </div>
+            <div class="footer-5">
+                立即购买
+            </div>
+            <div class="footer-5 add-cart">
+                加入购物车
+            </div>
         </div>
     </body>
 </html>
