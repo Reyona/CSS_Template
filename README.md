@@ -44,3 +44,7 @@ Add 3D transform Rounding Photo Wall.
 2017-12-15<br/>
 Add layout NetEaseMall.
 </p>
+<p>
+2018-01-21<br/>
+Update 3D transform Cube and 3D animation Cuboid - Put Cube and Cuboid in the middle of stage, no matter the width and height of parent element or themselves.
+</p>
