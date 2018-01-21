@@ -16,9 +16,11 @@
             perspective: 300px;
         }
         .container {
-            top: 25%;
-            left: 25%;
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(0);/*absolute元素的居中 不用考虑父元素和本元素的大小*/
+                                                        /*必须与.container:hover中的transform保持函数一致 顺序一致 否则动画失效*/
 
             transform-style: preserve-3d;
 
@@ -32,7 +34,7 @@
             transition:5s;
         }
         .container:hover {
-            transform: rotateY(360deg);
+            transform: translate(-50%, -50%) rotateY(360deg);/*必须与.container中的transform保持函数一致 顺序一致 否则动画失效*/
         }
         .side {
             width: 200px;
